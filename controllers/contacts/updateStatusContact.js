@@ -1,7 +1,8 @@
 const Contact = require("../../models/contact");
 const { NotFound } = require("http-errors");
+const { addStatusSchema } = require("../../schemas/contacts");
 
-const updateContact = async (req, res) => {
+const updateStatusContact = async (req, res) => {
     const { id } = req.params;
     const result = await Contact.findByIdAndUpdate(id, req.body);
     
@@ -12,4 +13,4 @@ const updateContact = async (req, res) => {
     res.json(result);
 }
 
-module.exports = updateContact;
+module.exports = updateStatusContact;
