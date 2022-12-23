@@ -9,7 +9,7 @@ const { validateBody, authenticate } = require("../../middlewares");
 
 const { schemas } = require("../../models/user");
 
-router.post("/register", validateBody(schemas.registerSchema), ctrlWrapper(ctrl.register));
+router.post("/signup", validateBody(schemas.signupSchema), ctrlWrapper(ctrl.signup));
 
 router.post("/login", validateBody(schemas.loginSchema), ctrlWrapper(ctrl.login));
 
